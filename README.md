@@ -8,6 +8,8 @@ Installations of SuperCollider and Processing are needed.
 You can find the downloads for your operating system here:
 https://supercollider.github.io/download
 https://processing.org/download/
+Additionally you will need to install the extension oscP5 which can be done inside Processing.
+Go to "Sketch" -> "Import Library" -> "Add Library", search for "oscP5" and install it.
 
 Once installed, open the provided files. The .scd is for SuperCollider and the main.pde is the main Processing file.
 The other two .pde files are self written classes that should appear next to the main tab. If not, open all three.
