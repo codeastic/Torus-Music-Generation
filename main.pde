@@ -14,8 +14,8 @@ float noiseX = 0;
 // user interface
 Button toggleProgramB, toggleManualB, exitB;
 Button[] bList = new Button[3];
-Slider speedSlid, randomSlid;
-Slider[] sList = new Slider[2];
+Slider speedSlid, heatSlid, randomSlid;
+Slider[] sList = new Slider[3];
 
 // Torus dimensions
 float majorR, minorR;
@@ -62,7 +62,7 @@ String[][] map = {
 PVector[][] vecMap2D = new PVector[2][12];
 float[][] weightMap = new float[2][12];
 
-float heat = 1; // higher heat causes more even distribution in choosing new keys (good range is 0.5 - 2)
+//float heat = 1; // higher heat causes more even distribution in choosing new keys (good range is 0.5 - 2)
 
 // axes
 PVector x, y, z;
@@ -96,9 +96,11 @@ void setup() {
   bList[2] = exitB;
   // Sliders
   speedSlid = new Slider(new PVector(220, 75), 180, 30, "speed", "speed");
-  randomSlid = new Slider(new PVector(480, 75), 180, 30, "random", "randomness");
+  heatSlid = new Slider(new PVector(480, 75), 180, 30, "heat", "adjust heat");
+  randomSlid = new Slider(new PVector(740, 75), 180, 30, "random", "randomness");
   sList[0] = speedSlid;
   sList[1] = randomSlid;
+  sList[2] = heatSlid;
 
   majorR = height/4;
   minorR = majorR/2.2;
@@ -263,7 +265,7 @@ float[][] getWeights() {
   //  currVal /= maxDist; // normalise distances - not necessary, as I use .normalizeSum in SuperCollider. Here only in case of debugging needs.
   //  currVal = 1/currVal; // bigger distances make smaller weights and vice versa
   //  currVal -= 1; // through testing, i found, that the values are always very near 1, which would cause the weights to be very close to one another
-  //  currVal = pow(currVal, 1/heat);
+  //  currVal = pow(currVal, 1/map(heatSlid.value, 0, 1, 0.5, 2));
   //  weightMap[i%2][int(i/2)] = currVal;
   //}
 
@@ -318,7 +320,7 @@ float[][] getWeights() {
     currVal /= maxDist; // normalise distances - not necessary, as I use .normalizeSum in SuperCollider. Here only in case of debugging needs.
     currVal = 1/currVal; // bigger distances make smaller weights and vice versa
     currVal--;
-    currVal = pow(currVal, 1/heat);
+    currVal = pow(currVal, 1/map(heatSlid.value, 0, 1, 0.5, 2));
     weightMap[i%2][int(i/2)] = currVal;
   }
 
@@ -500,6 +502,7 @@ void draw() {
     b.show();
   }
   speedSlid.show();
+  heatSlid.show();
   if (!manual) {
     randomSlid.show();
   }
