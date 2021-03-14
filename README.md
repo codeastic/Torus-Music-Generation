@@ -12,7 +12,7 @@ Go to "Sketch" -> "Import Library" -> "Add Library", search for "oscP5" and inst
 
 Once installed, open the provided files. The ".scd" is for SuperCollider and the "main.pde" is the main Processing file.<br>
 The other two ".pde" files are self written classes that need to be in the same folder as "main.pde".<br>
-That folder has to also be named "main" so that processing knows that the files are related.<br>
+That folder has to also be named "main" so that processing knows the files relation.<br>
 In SuperCollider you will find two blocks of code, outlined by parantheses.<br>
 To execute these, you need to place the cursor inside and press ctrl+enter, or cmd+enter on Mac.<br>
 First execute "s.boot;", or press ctrl+b, or cmd+b to boot the scsynth for sound synthesis.<br>
