@@ -13,10 +13,12 @@ Go to "Sketch" -> "Import Library" -> "Add Library", search for "oscP5" and inst
 Once installed, open the provided files. The ".scd" is for SuperCollider and the "main.pde" is the main Processing file.<br>
 The other two ".pde" files are self written classes that need to be in the same folder as "main.pde".<br>
 That folder has to also be named "main" so that processing knows that the files are related.<br>
-In SuperCollider you will find two blocks of code. First the "s.boot;" to boot the scsynth for sound synthesis.<br>
+In SuperCollider you will find two blocks of code, outlined by parantheses.<br>
+To execute these, you need to place the cursor inside and press ctrl+enter, or cmd+enter on Mac.<br>
+First execute "s.boot;", or press ctrl+b, or cmd+b to boot the scsynth for sound synthesis.<br>
 If you don't start scsynth, an error will occur as soon as SuperCollider tries to play something from the server.<br>
 When the server is running (indicated by the green numbers at the bottom right) you can execute the second<br>
-code block (by pressing ctrl+enter, or cmd+enter on Mac) which then waits for the Processing sketch to start.<br>
+code block, which then waits for the Processing sketch to start.<br>
 After this, go to Processing and hit ctrl+r, or cmd+r. The Sketch should come up and the sound patterns should start playing.<br><br>
 
 Have fun!
