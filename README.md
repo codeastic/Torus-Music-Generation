@@ -7,8 +7,10 @@ Made in SuperCollider 3.11.0 and Processing 3.5.4
 Installations of SuperCollider and Processing are needed.<br>
 You can find the downloads for your operating system here:<br>
 https://supercollider.github.io/download | https://processing.org/download/<br>
-Additionally you will need to install the extension oscP5 which can be done inside Processing.<br>
-Go to "Sketch" -> "Import Library" -> "Add Library", search for "oscP5" and install it.<br><br>
+Additionally you will need to install the extension oscP5, which can be done inside Processing.<br>
+Go to "Sketch" -> "Import Library" -> "Add Library", search for "oscP5" and install it.<br>
+The SuperCollider Quark wslib is also necessary. In SuperCollider open a new file, type 'Quarks.install("wslib")'<br>
+and execute that line by pressing shift+enter.<br><br>
 
 Once installed, open the provided files. The ".scd" is for SuperCollider and the "main.pde" is the main Processing file.<br>
 The other two ".pde" files are self written classes that need to be in the same folder as "main.pde".<br>
